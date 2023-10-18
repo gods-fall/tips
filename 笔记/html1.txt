@@ -1,0 +1,290 @@
+html
+w3scholl
+MDNmeta
+
+<!DOCTYPE html>
+    <html>lang="en">
+        <head>
+        <meta charset = "utf-8>
+        <meta name ="viewport" content = "width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible"content="ie=edge">
+         <title></title>
+         </head>
+        <body>
+
+         </body>
+          </html>
+</!doctype>
+
+boby区域常用标签
+
+<h></h>标签
+
+<b></b></strong></strong> 加粗
+
+<sup></sup>上标
+
+<sub></sub>下标
+
+<s></s>删除线
+
+<u></u>下划线
+
+<i></i> <em></em>斜体
+
+<cite></cite>引用
+
+<p></p> 段落
+
+<br/>换行
+
+<hr/>分隔线
+
+<pre></pre>预格式化
+
+<a></a>
+
+href 图片路径 文件路径 网址 锚点 (id #id)
+
+<a href = "#name">htl </a>
+
+<a name = "htl"></a>
+
+唤起指定应用
+
+
+
+target 赋值 _self 本页面跳转 _blank 打开新的页面 [name]在指定名字的标签上打开 一般配合iframe标签使用
+
+
+
+<img></img> src 设置图片地址 alt 失效代替
+
+
+
+
+
+ul li无序列表
+
+<ul type ="disk/circle/square">
+
+<li></li>
+
+</ul>
+
+ol li有序列表
+
+<ol type ="1/i/I/a/A">
+    <li></li>
+</ol>
+
+dl定义有序列表的标签 dt设置标题 dd 具体列表项
+
+<dl>
+    <dt>1</dt>
+    <dd>2</dd>
+</dl>
+
+table(wh border cellspace单元格缝隙 align水平 valign垂直)表格 thead tbody tfoot tr  th定义表格 td 定义单元格  th 定义单元格的同时默认加粗caption
+
+<table>
+    <caption>学生信息</caption>
+    <tr>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>年龄</td>
+        <td>政治面貌</td>
+        <td>民族</td>
+    </tr>
+    <tr>
+        <td>张三</td>
+        <td>男</td>
+        <td>19</td>
+        <td>群组</td>
+        <td>汉族</td>
+    </tr>
+     <tr>
+        <td>李四</td>
+        <td>男</td>
+        <td>19</td>
+        <td>群组</td>
+        <td>汉族</td>
+    </tr>
+    </table>
+
+​    
+
+<table>
+    <caption>课程表</caption>
+    <thead>
+        <tr>
+            <th>项目</th>
+            <th colspan ="5">上课</th>
+            <th colspan="2">活动与休息</th>
+                </tr>
+</thead> 
+    <tbody>
+        <tr>
+        <td>星期</td>
+            <td>星期1</td>
+            <td>星期2</td>
+            <td>星期3</td>
+            <td>星期4</td>
+            <td>星期5</td>
+            <td>星期6</td>
+            <td>星期0</td>
+          </tr>
+        <tr>
+       		 <td rowspan="4">上午</td>
+            <td>语文</td>
+            <td>数学</td>
+            <td>英语</td>
+           <td>语文</td>
+            <td>数学</td>
+            <td>英语</td>
+            <td>英语</td>
+          </tr>
+        <tr> <td>语文</td>
+            <td>数学</td>
+            <td>英语</td>
+           <td>语文</td>
+            <td>数学</td>
+            <td>英语</td>
+            <td>英语</td></tr>
+        <tr> <td>语文</td>
+            <td>数学</td>
+            <td>英语</td>
+           <td>语文</td>
+            <td>数学</td>
+            <td>英语</td>
+            <td>英语</td></tr>
+</tbody>
+    </table>
+
+
+​    
+
+
+​    
+
+
+
+
+
+
+
+
+colspan rowspan 跨列跨行
+
+表单
+
+input 文本标签 name属性 通过form表单
+
+texttarea 大文本 下拉菜单标签 select 
+
+type : text count date botton(干净的按钮)  单选radio(name value) checked多选  hidden submit提交(不写name) reset 等
+
+name 设置值必须与后端接收前端数据一致  数据的名称
+
+value 显示在页面上的值
+
+<from action = '把表单交给谁去处理' method  = 'get /post'>
+
+<input type>
+
+ button
+
+ text password   placeholder= "" 占位   maxlength最大可输入长度
+
+文本域textarea name =   id =  cols=   rows = 
+
+<select name = 'class'>
+    <option>yiban</option>
+</select>
+input disable 
+
+lablel for 与id关联
+
+<label for = "1">登录</label>
+
+<input id =" 1" type ="text" ></input>
+
+fieldset legend 主要信息
+
+iframe用于在一个页面嵌入另一个页面 wh frameborder
+
+配合a标签使用
+
+<a href =" www.baidu.com" target="tt">显示百度</a>
+
+<iframe name= "tt"></iframe>
+
+<iframe name ='iframe-best' w = '' h='' src =""></iframe>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;空格&lt &gt &;copy
+
+div span 
+
+div是块状容器 独占一行 
+
+span 是行级容器 大小自适应包裹对象
+
+
+
+相对路径与绝对路径 ./当前位置 ../
+
+全局属性id class style title
+
+![image-20230711160635052](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230711160635052.png)
+
+![image-20230711160717531](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230711160717531.png)
+
+h5
+
+![image-20230711134713267](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230711134713267.png)
+
+![image-20230711134953487](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230711134953487.png)
+
+meter max min value 手机电量 low high optimum
+
+progress进度 max value
+
+datalist  option value搜索提示
+
+![image-20230715103517781](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230715103517781.png)
+
+detai  summary 抽象三角号
+
+ruby 汉字注音rt  mark 标记
+
+表单控件
+
+![image-20230715104329013](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230715104329013.png)
+
+placeholder =""
+
+requireid 必选项
+
+autofocus 自动聚交
+
+autocomplete="" 自动完成 /off/on
+
+pattern =""正则表达式
+
+
+
+input type ="" email url \number  \step="2" max  min\   search tel   \range 光照强度 max min value\
+
+ color   date month  time  datetime-local
+
+多媒体表现 
+
+video  controls muted静音 autoplay loop循环 poster=""封面 视频预加载preload=""
+
+audio  controls autoplay loop
+
+全局
+
+![image-20230715114048853](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230715114048853.png)
+
+![image-20230715115202874](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230715115202874.png)
