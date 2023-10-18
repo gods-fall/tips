@@ -1,0 +1,42 @@
+冒泡排序
+将无序的队列排成有序的队列
+/两两相邻
+不停比较
+不停交换
+比较n轮/
+int [] arr = new int [] {8,7,1,5,4,2,6,3,9}
+如何比较数组两两相邻的数
+n 与 n+1
+
+for (int m ;m<arr.length;m++){
+for (int n = 0 ;n <arr.length-1-m;n++){
+    if (arr[n]>arr[n+1]){
+//中间商 
+,,,,
+
+    }
+}
+}
+//优化
+
+选择排序
+
+新建中间商 
+依次比较
+找出机值
+放入目标位置
+比较n轮 
+
+代码
+int [] arr = new int[]{8,6,1,5,4,2,6,3,9}
+int index =0 ;
+for (m=0;m<arr.length;m++){
+for (int n= 1 ;n<arr.length-m;i++){
+    if (arr[index]<arr[n]){
+        index = n;
+    }
+}
+if (index != arr.length - 1 -论数){
+    中间商
+}
+}

@@ -1,0 +1,781 @@
+窗体:可视化窗口 
+Application.Run(new frmWin());
+StartPosition:启动位置 CenterScreen;
+MaximizeBox:是否最大化 
+FormBorderStyle 窗体尺寸是否可以变化 None没有边框,单边框FixedSingle
+from表单
+1.Label 标签 提示信息
+2.textBox 文本框 :输入信息
+3.button 按钮 
+账号名 textName
+密码 textPwd 
+取消 cancel 
+MessageBox.show();
+定义变量接收用户名与密码框
+listBox列表框
+Load加载事件 还没有显示出来 ,先加载到内存
+
+Item项目 items所有项目的集合
+listBox1.Items.add("");
+selectedindex items item 
+lsitbox1.selectedindex 选择索引
+listBox1.Item.Count 个数
+listBox.SelectedItem;
+comboxbox
+comBox1.Items.add("");
+dropdownstyle()
+combobx.SelectedItem 选择项
+combobx.Selected=text 选择文本
+combobx.SelectedItem 选择的值
+panel 
+picturebox 
+找路径 
+picturebox.Image 
+debug文件
+picturebox.ImageLocation= "img/bg"+i+".jpg";
+数字变量i.jpg           String.Format  ("img/bg{0}.jpg",i) ;
+多窗体调用  以及退出
+窗体 from = new from();
+mypic.show ();
+this.hide();
+this.close();
+应用程序关闭
+Application.Exit();
+MessageBox :消系提示
+DialogResult result = MessageBox.Show("提示信息","是否关闭?",Messageboxboxbuttons.YesNo,MessageBoxicon.Question);
+e.cancel = false;
+
+textbox 停靠 父容器停靠 
+dock定义绑定容器的空间边缘 
+richtextbox 富文本框
+
+menustrip菜单     text指明快捷键(&f)
+contextMennuStrip 快捷菜单
+统一给文本框和富文本框改名textnotepad
+this.textnotepad.undo();撤销
+.Cut();
+.Paste();
+enable false因为最开始没有
+设置字体
+需要先给字体一个具体的字体对象
+textNotepad.Font = new Font("Arial",16/*数字变量);
+statusstrip  时间值类的对象 visible 不可见
+状态栏tool.checked = true;
+this .         vsisble = true;
+事件
+文本框 text_changed()
+富文本框 Selectionchanged 
+if (richtextbox.SelectedText.Length != 0 )
+
+shortcukeys与菜单项关联的快捷键 设置的快捷键
+控件 :
+工具栏
+toolstrip 
+display  图像和文本显示方式 imageandtext
+
+image  按钮或标签上的图片
+
+imagescaling  图片大小
+text          标签显示上的文字
+textImagerelation   图片和文字的相对位置
+
+计时器 
+timer 有规律的自动执行一次代码 
+属性
+interval 事件发生的概率 毫秒为单位
+Enabled     获取或设置计时器是否正在运行
+事件 
+tick
+start 
+stop 
+属性 
+Name
+interval 1000s 1s = 1000ms 
+选项卡 
+tabcontrol
+multiline 是否可以显示一行的选项卡
+tabPages 设置控件上的选项卡页的集合
+selectedindex  选项卡页的索引
+selectedTab 当选定的选项卡页
+
+datagirdvivew数据表
+
+notifyicon 
+text 当鼠标悬停在该图标上显示文本
+balloontipicon 与气球状工具提示关联的图标
+
+imagelist 图像列表
+
+radiobutton
+字体跑马灯效果
+color = color.FromArgb();
+
+c#连接数据库mysql 
+mysql.data.dll 
+这是 连接数据库的动态链接库
+C#连接MySQL数据库需要引用MySql.Data.dll，m
+ysql.data.dll是C#操作MYSQL的驱动文件，
+是c#连接mysql必要插件，
+使c#语言更简洁的操作mysql数据库。
+1.需要添加mysql.data.dll引用 
+using MySql.Data.MySqlClient;
+
+string constr = "server=.; database= test ; userid = root; password = root";
+//这是一个连接对象,我们如果连接mysql要加连接对象
+ MySqlConnection conn = new MySqlConnection(constr);
+//打开连接
+conn.Open();
+//测试连接
+connecttionstate state = conn.State;
+MessageBox.show (state.tostring());
+
+调用命令对象
+command 
+selectcommand 
+insertcommand
+updatecommand
+deletecommand
+string inssql  = string.Format("insert  emp(ename,tob,sasaly) values ({0},{1},{2})" ,,,);
+第一个是执行的SQL语句第二个是连接对象
+mysqlcommand comm = new mysqlcommand(inssql,conn)
+执行
+ int result = comm.ExecuteNonQuery();
+
+ 文本内容的时候占位符两侧需要加''
+string delsql = string.Format("delete from emp where ename ='{0}'" ,,,,)
+//关闭连接 
+conn.close();
+删除之前可以添加确认是否删除的判断
+
+模糊 删除 like
+
+查询 
+string selectsql = "select *from table";
+
+ mysqldataAdapter data =  new mysqldataAdapter(selsql,conn);
+//数据适配器
+查询结果放在表中 就是放在结果集中
+
+datatable dt = new datatable ();
+adapter.fill(dt);放在表dt中
+数据表格与dt建立连接
+datagridview.datasource =dt;
+//comm.ExecuteReader();
+datagridview 控件
+
+模糊查询 like
+修改
+
+不想让datagirdview修改
+
+可以修改readonly
+
+row行
+
+cell 单元格的单机事件 单元格上 的内容,在内容单击 cell是行里面的列
+
+cellcontentclick
+
+e.rowindex
+
+e.columnindex   
+
+string job  =datagirdview1.rows[e.rowindex].cell[3].value.tostring();
+
+frmUpEmp upemp = new frmUpEmp();
+
+upemp.empno=empno;
+
+upemp.showdialog();
+
+
+
+在frmempup里
+
+txtName.text = ename
+
+txtJob = job
+
+
+
+更新
+
+string upsql = string.format("update emp set ename = '{0}',)
+
+
+
+frmAdd 
+
+增加学生信息
+
+动态传数据
+
+1.先定义变量接收一下
+
+string name = textName.text.trim();//去两边的空格
+
+string gender = redmale.checked?"男":女;
+
+2.动态的数据
+
+string sql ="insert student ()values ()";
+
+
+
+登陆功能
+
+passwordchar 设置密码隐藏符
+
+首先不让他动 fromborderstyle fixedsingle 
+
+居中 startpostion centerscreen
+
+maxmizebox false
+
+登陆按钮 
+
+string constr = "server=127.;userid =root;";
+
+string sql = string.format()
+
+mysqldatareader 数据读取器
+
+hasrows 是否返回结果 如果有查询 则返回true 否则返回false
+
+fieldcount 返回当前行中的列数
+
+if (){
+
+this.hide
+
+frmaddstu addstu =new frmaddstu(); //new新窗体
+
+addstu.show();
+
+}
+
+mdi多窗口
+
+menustrip
+
+ismdicontainer true 
+
+mdi窗体 多文档窗口
+
+addstu.mdiparent = this ;设置新窗体的父窗体是当前mdi的容器
+
+//数据读取 
+
+读的时候需要循环 
+
+read() 能够读为true 
+
+isdbnull 判断列中是否为空
+
+while (reader.read()){
+
+if (!reader.isdbnull(0) {
+
+//getstring获得字符串 0 是读取的第一列 也可以写成列名
+
+console.writeline(reader.getstring(0) +","+reader.getstring(1)
+
+}
+
+
+
+listview
+
+
+
+dataset 数据适配器 数据表格
+
+数据集 
+
+是在内存中建立一个临时的数据仓库 可以对其进行操作并同步到底层数据库
+
+为什么使用数据集
+
+使用 datatable 
+
+行和列的集合   columns rows 
+
+数据适配器 
+
+从数据源把数据拿到dataset 的datatable
+
+方法 fill update 
+
+封装提取代码
+
+datagird控件
+
+datagirdview 
+
+添加数据到数据表格
+
+//连接命令 连接对象
+
+mysqladapter ada = new 	mysqladapter(sql ,conn);
+
+fill的参数是数据集对象
+
+ada.fill();
+
+dataset ds =new dataset  // 临时数据库对象
+
+//目的是填充到数据表格里 向数据表格进行填充
+
+DataSource 数据源 可以设置某一个 datatable 
+
+selectionmode 是表格的选择模式 一般选择 fullrowselect
+
+multiselect是否可以多选
+
+readonly 是否只读
+
+
+
+dgvstudent.datasource = ds.tables//数据表的集合 [0];
+
+数据源是数据库还是数据表 表 
+
+
+
+通用的数据操作类查询 和应用
+
+//使用默认类的命名空间
+
+use.system.data
+
+参数
+
+通用方法的增删改的连接对象是通用的
+
+这是一个公共连接数据库的类
+
+class dbhelper {
+
+static string str = "";
+
+public static mysqlconnection getconn() {
+
+mysqlconnection conn = new mysqlconnection(str);
+
+conn.open();
+
+return conn;
+
+}
+
+public static void close (mysqlconnection conn ){
+
+if (conn != null){
+
+conn.close ();
+
+}
+
+}
+
+//增删改 
+
+public static int updata (string sql){
+
+mysqlconnection conn =getconn();
+
+mysqlcommand comm = new mysqlcommand (sql,conn);
+
+int result comm.excutenoquery();
+
+return result;
+
+
+
+}
+
+//查询操作
+
+注意 通用的dbhelper 类库文件返回的是一个表格 所以需要接收
+
+public static datatable query(string sql) {
+
+mysqlconnection conn =getconn();
+
+
+
+mysqldataadapter ada = new mysqladapter(sql,conn);
+
+datatable dt = new datatable ();
+
+ada.fill(dt);
+
+return dt;
+
+}
+
+}
+
+
+
+
+
+click 端 
+
+string sql = ""
+
+datatable dt = dbhelper.query(sql);
+
+datagirdview1.DataSource = dt;
+
+
+
+util文件夹 来放公共文件
+
+获取表格的值
+
+数据表格的内容查看
+
+cellclick 
+
+使用一个变量 接收
+
+string str datagirdview1.rows[0].cells[1].tostring();
+
+string str datagirdview1.rows[0].cells[1].value.tostring();
+
+e代表鼠标单击事件
+
+string str datagirdview1.rows[e.rowindex].cells[e.columnindex].tostring();
+
+跨窗体传值
+
+1.给窗体定义两个属性
+
+id name 
+
+接收
+
+textid.text = this.id;
+
+2.不在外面访问变量 如何做
+
+通过构造方法
+
+项目阶段 
+
+1.需求分析
+
+确定是有哪些模块 模块规范
+
+紫兴
+
+2.详细设计 数据库文档 说明书 根据我们实际程度 二者合并
+
+3.项目开发计划
+
+4.测试环节
+
+黑盒测试 白盒测试
+
+对于外界测试不用考虑代码 只需要测试功能需求
+
+一个是针对我们的错误调bug 一个就是加断点 来看自己的程序是否有问题
+
+针对代码
+
+合并项目 小项目合并大项目 大项目合并总项目 桩模块的测试
+
+5.打包发布
+
+上线运行
+
+c#程序集 
+
+版本号 
+
+主要版本号 大的版本号 架构不变 ,一般不动 ;
+
+次要模块
+
+修订bug
+
+![image-20230709143134405](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230709143134405.png)
+
+打包工具 
+
+installshield 
+
+反射
+
+,net 一种机制
+
+反射可以在运行时获取类的成员,属性,事件和构造方法等等
+
+type 
+
+ildasm反编译工具
+
+il是微软平台上的一门中间语言 我们常写的c#代码在编译器中都会自动转换成il
+
+然后在由即时编译器 转化 机器码 最后被cpu执行 
+
+ildasm.exe 反编译工具 将il 汇编 成 可跨平台可执行pe 文件 有了他我们看待问题可以不用停留在编辑器层面 可深入中间层
+
+1.寻找路径
+
+2.找到路径
+
+3.打开
+
+三级架构
+
+
+
+1.创建空白解决方案
+
+1.2创建winform项目 取名ui
+
+1.3创建类库项目 取名bll
+
+bll业务逻辑
+
+1.4创建类库项目 dal
+
+数据访问层
+
+1.5创建类库model 
+
+存放拾取类 实体类与表名一致
+
+1.6创建类库项目 取名 dbutil
+
+数据库的增删查改 通用数据库的方法定义
+
+
+
+
+
+ui界面
+
+添加业务层 实体层引用
+
+model设计
+
+需要把数据封装到model层和实体类层,这层可以被其他层调用
+
+封装字段ctrl r ctrl e 
+
+字段是私有的方法是公开的
+
+
+
+创建业务层对象bll  
+
+service
+
+引用 引用model
+
+
+
+crud 增删查改
+
+namespace bll {
+
+public class deptservice{
+
+public bool adddept (dept dept ){
+
+public bool updateDept(,,){
+
+public bool deldept (){
+
+public datatable finddeptbyname(){
+
+}
+
+dal数据访问层
+
+dao
+
+复制service层几个de方法
+
+引用model层
+
+string url = 
+
+sqlconnection conn 
+
+conn.open();
+
+sqlcommand cmd = conn.createcommand();
+
+
+
+string sql = "insert dept values(@deptid,@deptName)";
+
+cmd.commandtext =sql;
+
+//给参数赋值
+
+cmd.Parameters.add(new sqlparameter("@deptId",dept.deptId));
+
+
+
+dbutil 
+
+textdeptid.enablet = false
+
+
+
+
+
+简单工厂模式
+
+模型
+
+抽象产品的角色 代表具体产品的抽象类或是接口
+
+具体产品的角色 是第一步的实现类 或子类
+
+工厂类的角色 负责生成具体的产品类
+
+工厂方法模式
+
+工厂父类负责定义创建产品对象的公共接口 而工厂子类负责生成具体的产品对象
+
+
+
+抽象工厂模式
+
+![image-20230710120432575](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230710120432575.png)
+
+
+
+反射和工厂模式实现对不同数据库访问
+
+三层架构 实现一个程序访问多个数据库
+
+idal
+
+![image-20230710122812826](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230710122812826.png)
+
+rdlc
+
+report definiton language报表定义语言
+
+c:client
+
+报表技术 打印
+
+report viewer报表视图控件
+
+dock 填充属性
+
+新建项 报表
+
+汉字不显示
+
+占位符属性字体
+
+父组子组
+
+
+
+udp用户数据报协议
+
+报头8个字节不包括数据
+
+![image-20230710142735206](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230710142735206.png)
+
+![image-20230710142844102](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230710142844102.png)
+
+![image-20230710142943102](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230710142943102.png)
+
+命名空间 
+
+system.net 
+
+system.net.socket
+
+类 udpclient
+
+类 localep
+
+ipendpoint 表示将udp连接绑定到本地终结点
+
+将网络端点表示为ip地址和端口号
+
+![image-20230710143721852](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230710143721852.png)
+
+3.发送数据先定义数据内容
+
+string msg = "";
+
+4.发送
+
+byte[] dgram = Encoding.default.getbytes(msg);
+
+![image-20230710143903968](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230710143903968.png)
+
+udpserver.send(dgram,dgram.Length,clientpoint);
+
+客户端
+
+![image-20230710144644529](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230710144644529.png)
+
+网络编程ipv4 ipv6  端口
+
+域名需要dns服务器解析 域名解析 建立与ip的联系
+
+ipv4 点分十进制法
+
+每一个按照8位进行二进制点分
+
+ipv6
+
+互联网协议第六版
+
+![image-20230710150830926](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230710150830926.png)
+
+客户端
+
+![image-20230710151332971](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230710151332971.png)
+
+91节精彩
+
+tcp
+
+三次
+
+客户端 服务器
+
+服务器 反馈
+
+服务器运行起来处于接收状态 添加了一个类监听器类
+
+![image-20230710153846836](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230710153846836.png)
+
+客户端
+
+93
+
+94
+
+使用字符流包装字节流对象
+
+
+
+版本控制系统  
+
+![image-20230710155614973](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230710155614973.png)
+
+线程
+
+...
+
+
+
+![image-20230710161733132](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230710161733132.png)
+
+![image-20230710161922009](C:\Users\link\AppData\Roaming\Typora\typora-user-images\image-20230710161922009.png)

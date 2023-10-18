@@ -1,0 +1,46 @@
+条件分支语句
+if 语句 
+if (bool值类型,条件表达式)
+{满足条件要执行的代码}
+
+注意 if的语法部分不需要写分号
+if else 语句 
+ if ()
+ {}
+ else {}
+if else if  else 语句
+if ()
+{}
+else if() {}
+
+else {}
+
+
+Switch 语句 
+
+基本语法 
+switch (变量) {
+    //当变量 == 常量 执行 case与break之间的代码
+    case 常量:
+    break;
+    case 常量 :
+    break;
+    default:
+    代码
+    break;
+}
+注意: 常量只能写一个值  
+Switch 只能判断变量 是否等于一个固定值
+ 配合枚举使用
+
+ 贯穿
+ int aa = 1 ;
+  Switch(aa){
+    case 1 :
+    case 2 :
+    Console.WriteLine("nima");
+    break;
+    default:
+    break;
+  }
+  满足12条件的任意一个就会执行代码

@@ -1,0 +1,221 @@
+数据集合
+
+Arraylist
+是一个c#为我们封装好的类
+本质是一个object类型的数组
+ArrayList类帮助我们实现了很多方法 
+比如数组的增删查改
+
+申明
+//需要引用命名空间 using.System.Collections;
+Arraylist array = new  Arraylist();
+
+增删查改
+f12 查看系统 
+
+array.Add("123");
+array.AddRange(array);
+范围增加 把另一个list容器加到后面
+
+array.Insert(1,"123233432432");
+array.Remove(1);
+移除指定元素 从头找,找到删除
+array.RemoveAt(2);
+移除指定位置
+array.Clear();
+
+console.writeline (array[0]);
+得到指定位置
+
+查看元素是否存在  
+if (array.Contains("123"))
+{
+   console.writeline("存在1223") 
+}
+
+正向查找元素位置 
+找到返回值是位置 找不到 返回值 是-1
+int index = array.IndexOf(true);
+反向 
+LastIndexOf 
+
+array[0]="999";
+
+遍历
+console.writeline(array.Count);长度
+console.writeline (array.Capacity);容量 
+
+for (int; i<array;i++)
+{
+    console.writeline(array[i]);
+
+}
+
+//迭代器遍历 
+foreach (object item in array){
+    console.writeline(item);
+}
+
+装箱拆箱
+array是一个可用自动扩容的object数组 
+由万物之父来存储数据 自然存在装箱拆箱 
+当往其中进行值类型存储时就是在装箱 当值类型对象取出来使用时 ,就存在拆箱
+int k =1;
+array[0] = i;装箱
+i =(int)array[0];拆箱
+
+
+stack 
+是一个c#为我们封装好的类
+本质是object数组 只是封装了特殊的存储规则
+
+stack 是栈存储容器 栈是一种先进后出的数据结构
+先存入 的数据后获取 后存入的数据先获取
+栈是先进后出的 
+申明 
+需要引用命名空间 System.Collections
+Stack stack = new Stack();
+
+增 
+压栈 
+Stack Push (1);
+stack.Push("");
+
+取
+栈中不存在删除概念 只有取的概念 
+//弹栈 
+object v= stack.Pop();
+查
+栈无法查看指定位置的 元素 
+只能查看 栈顶的内容 
+v= stack.Peek();
+查看元素是否存在于栈中 
+if (stack.Contains(1.2f)){
+    console.writeline("存在")
+
+}
+改
+
+栈无法改元素 只能压和弹 只有清空 
+stack.Clear();
+
+遍历 
+长度 console.writeline(stack.Count);
+使用 foreach遍历 
+而且遍历出来的顺序 也是从栈顶到栈底
+foreach(object item in stack) 
+{
+    console.writeline(item);
+}
+还有一种遍历 将栈转换为object数组 
+遍历出来的顺序 也是从栈顶 到栈底
+object [] array = stack.ToArray();
+for (int i =0 ;i<array.Length;i++)
+{
+    console.writeline(array[i]);
+}
+
+循环弹栈
+while (stack.Count>0)
+{
+    object o =stack.Pop();
+    console.writeline(o);
+
+}
+console.writeline(stack.Count);
+
+装箱拆箱 
+//
+
+Queue
+队列是一个c#为我们封装好的类
+它的本质也是object数组 只是封装了特殊的存储规则
+Queue是队列存储容器 
+
+队列是一种先进先出的数据结构 
+先存入的数据先获取 ,后存入的数据后获取 
+先进先出
+
+申明 需要引用命名空间 System.Collections
+Queue queue = new Queue();
+增取查改
+queue.Enqueue(1);
+
+队列中不存在删除的概念 
+左右取的概念 取出先加入的对象
+object v = queue.Dequeue();
+
+查 
+查看头部元素但不会移除 
+v= queue.Peek();
+查看元素是否存在队列
+if 
+改
+队列无法改变其中的元素 只能进出队列 
+实在要改只有清
+
+遍历 
+同上 
+
+hashtable
+又称散列表  基于键的哈希代码 组织起来 的 键值对
+它的主要作用是提高数据查询效率
+使用键来访问 集合中的元素
+
+申明 
+引用命名空间
+
+hashtable  hashtable = new Hashtable();
+
+增 
+hashtable.Add(1,"123");
+不能出现相同的键 
+删除 
+Remove 只能通过键删除 
+删除不存在的键没反应 
+或直接清空
+查 
+通过键查看值 
+找不到会返回空 
+
+查看是否存在
+根据键值检测
+if (hashtable.ContainsKey("2"))
+{
+    console.writeline ("存在")
+}
+根据值检测 
+if (hashtable.ContainsValue())
+{
+
+}
+改
+只能改键的值 
+hashtable [1]= 100.5f;
+
+遍历 
+得到键值对的对数 
+console.writeline(hashtable.Count);
+1.遍历所有键
+foreach (object item in hashtable.keys)
+{
+    console.writeline("键"+item);
+    console.writeline("值"+hashtable[item]);
+
+}
+遍历所有值
+                values
+
+键值对一起遍历
+
+foreach (DictionaryEntry item in hashtable  )
+{
+
+}
+迭代器遍历
+hashtable.GetEnummerator();
+bool flag = myEummerator.MoveNext();
+
+
+装箱拆箱
+同上
